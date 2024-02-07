@@ -1,0 +1,132 @@
+{
+    "Catcher": {
+      "PullDay": {
+        "Exercises": [
+          {"Klimmzüge (Wide Grip)": "4 Sätze x 8-10 Wiederholungen"},
+          {"Langhantelrudern": "3 Sätze x 10-12 Wiederholungen"},
+          {"Einarmiges Kurzhantelrudern": "3 Sätze x 12-15 Wiederholungen pro Seite"},
+          {"Latziehen mit breitem Griff": "4 Sätze x 10-12 Wiederholungen"},
+          {"Hammercurls": "3 Sätze x 12-15 Wiederholungen"}
+        ]
+      },
+      "PushDay": {
+        "Exercises": [
+          {"Bankdrücken": "4 Sätze x 8-10 Wiederholungen"},
+          {"Schulterdrücken": "3 Sätze x 10-12 Wiederholungen"},
+          {"Liegestütze mit Klappe": "4 Sätze x 12-15 Wiederholungen"},
+          {"Trizeps-Dips": "3 Sätze x 12-15 Wiederholungen"},
+          {"Seitheben mit Kurzhanteln": "3 Sätze x 12-15 Wiederholungen"}
+        ]
+      },
+      "LegDay": {
+        "Exercises": [
+          {"Kniebeugen": "4 Sätze x 8-10 Wiederholungen"},
+          {"Ausfallschritte": "3 Sätze x 10-12 Wiederholungen pro Bein"},
+          {"Wadenheben": "4 Sätze x 12-15 Wiederholungen"},
+          {"Boxsprünge": "3 Sätze x 10-12 Wiederholungen"},
+          {"Sitzende Beinpressen": "3 Sätze x 12-15 Wiederholungen"}
+        ]
+      }
+    },
+    "Pitcher": {
+      "PullDay": {
+        "Exercises": [
+          {"Klimmzüge (Reverse Grip)": "4 Sätze x 8-10 Wiederholungen"},
+          {"Langhantelrudern (Pendlay Rows)": "3 Sätze x 10-12 Wiederholungen"},
+          {"Einarmiges Kurzhantelrudern": "3 Sätze x 12-15 Wiederholungen pro Seite"},
+          {"Latziehen im engen Griff": "4 Sätze x 10-12 Wiederholungen"},
+          {"Unterarm-Curls": "3 Sätze x 12-15 Wiederholungen"}
+        ]
+      },
+      "PushDay": {
+        "Exercises": [
+          {"Bankdrücken (Hanteln)": "4 Sätze x 8-10 Wiederholungen"},
+          {"Schulterdrücken mit Kurzhanteln": "3 Sätze x 10-12 Wiederholungen"},
+          {"Liegestütze mit erhöhten Füßen": "4 Sätze x 12-15 Wiederholungen"},
+          {"Trizeps-Dips": "3 Sätze x 12-15 Wiederholungen"},
+          {"Frontheben mit Kurzhanteln": "3 Sätze x 12-15 Wiederholungen"}
+        ]
+      },
+      "LegDay": {
+        "Exercises": [
+          {"Explosive Kniebeugen": "4 Sätze x 8-10 Wiederholungen"},
+          {"Einbeinige Kniebeugen": "3 Sätze x 10-12 Wiederholungen pro Bein"},
+          {"Wadenheben (einbeinig)": "4 Sätze x 12-15 Wiederholungen"},
+          {"Boxsprünge": "3 Sätze x 10-12 Wiederholungen"},
+          {"Ausfallschritte mit Kurzhanteln": "3 Sätze x 12-15 Wiederholungen pro Bein"}
+        ]
+      }
+    },
+    "Infielder": {
+      "PullDay": {
+        "Exercises": [
+          {"Klimmzüge (Enger Griff)": "4 Sätze x 8-10 Wiederholungen"},
+          {"Langhantelrudern (Yates Rows)": "3 Sätze x 10-12 Wiederholungen"},
+          {"Einarmiges Kurzhantelrudern": "3 Sätze x 12-15 Wiederholungen pro Seite"},
+          {"Latziehen mit Seilgriff": "4 Sätze x 10-12 Wiederholungen"},
+          {"Reverse Curls": "3 Sätze x 12-15 Wiederholungen"}
+        ]
+      },
+      "PushDay": {
+        "Exercises": [
+          {"Bankdrücken": "4 Sätze x 8-10 Wiederholungen"},
+          {"Schulterdrücken": "3 Sätze x 10-12 Wiederholungen"},
+          {"Liegestütze mit Klappe": "4 Sätze x 12-15 Wiederholungen"},
+          {"Trizeps-Dips": "3 Sätze x 12-15 Wiederholungen"},
+          {"Frontheben mit Kurzhanteln": "3 Sätze x 12-15 Wiederholungen"}
+        ]
+      },
+      "LegDay": {
+        "Exercises": [
+          {"Kniebeugen": "4 Sätze x 8-10 Wiederholungen"},
+          {"Ausfallschritte": "3 Sätze x 10-12 Wiederholungen pro Bein"},
+          {"Wadenheben": "4 Sätze x 12-15 Wiederholungen"},
+          {"Boxsprünge": "3 Sätze x 10-12 Wiederholungen"},
+          {"Sitzende Beinpressen": "3 Sätze x 12-15 Wiederholungen"}
+        ]
+      }
+    },
+    "Outfielder": {
+        "PullDay": {
+          "Exercises": [
+            {"Latziehen mit breitem Griff": "4 Sätze x 10-12 Wiederholungen"},
+            {"Reverse Flys mit Kurzhanteln": "3 Sätze x 12-15 Wiederholungen"},
+            {"Klimmzüge (Neutraler Griff)": "3 Sätze x 10-12 Wiederholungen"},
+            {"Hammercurls": "3 Sätze x 12-15 Wiederholungen"},
+            {"Unterarm-Curls": "3 Sätze x 12-15 Wiederholungen"}
+          ]
+        },
+        "PushDay": {
+          "Exercises": [
+            {"Bankdrücken": "4 Sätze x 8-10 Wiederholungen"},
+            {"Schulterdrücken mit Kurzhanteln": "3 Sätze x 10-12 Wiederholungen"},
+            {"Liegestütze mit Klappe": "4 Sätze x 12-15 Wiederholungen"},
+            {"Trizeps-Dips": "3 Sätze x 12-15 Wiederholungen"},
+            {"Frontheben mit Kurzhanteln": "3 Sätze x 12-15 Wiederholungen"}
+          ]
+        },
+        "LegDay": {
+          "Exercises": [
+            {"Kniebeugen": "4 Sätze x 8-10 Wiederholungen"},
+            {"Ausfallschritte mit Kurzhanteln": "3 Sätze x 10-12 Wiederholungen pro Bein"},
+            {"Wadenheben": "4 Sätze x 12-15 Wiederholungen"},
+            {"Boxsprünge": "3 Sätze x 10-12 Wiederholungen"},
+            {"Sitzende Beinpressen": "3 Sätze x 12-15 Wiederholungen"}
+          ]
+        }
+      },
+      "DesignatedHitter": {
+        "FullBodyDay": {
+          "Exercises": [
+            {"Kreuzheben": "4 Sätze x 8-10 Wiederholungen"},
+            {"Bankdrücken": "4 Sätze x 8-10 Wiederholungen"},
+            {"Kniebeugen": "4 Sätze x 8-10 Wiederholungen"},
+            {"Schulterdrücken": "3 Sätze x 10-12 Wiederholungen"},
+            {"Trizeps-Dips": "3 Sätze x 12-15 Wiederholungen"},
+            {"Bizepscurls": "3 Sätze x 12-15 Wiederholungen"},
+            {"Russian Twists": "3 Sätze x 15-20 Wiederholungen pro Seite"},
+            {"Planks": "3 Sätze x 30-60 Sekunden"}
+          ]
+        }
+      }
+    }

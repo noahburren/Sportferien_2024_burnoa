@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baseball Fitness Hub</title>
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Baseball Fitness Planer</h1>
+    </header>
+
+    <nav>
+      <a href="#home">BFP</a>
+      <a href="#programs">Gymplan</a>
+      <a href="#tracking">Fitness Tracking</a>
+      <a href="#about">About Us</a>
+    </nav>
+
+    <section id="home">
+      <h2>Baseball Fitness Planer</h2>
+      <p>tzgwrtghsrtghsrtgdsf</p>
+    </section>
+
+    <section id="programs">
+      <h2>Gymplan</h2>
+      <p>
+        You play Baseball and don't know how to improve strenght? Luckly you are
+        on the right place:) Press <a href="Positionsauswahl.html">here</a> to
+        create your own plan. You can choose your position and the amount of
+        workouts you want. Go test it out!
+      </p>
+    </section>
+
+    <section id="tracking">
+      <h2>Tracking</h2>
+      <p>Find out how to track your progress and improve your game.</p>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>We just want you to become the best version of yourself.</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Baseball Fitness Planer.</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var lastScrollTop = 0;
+        var footer = document.querySelector("footer");
+
+        window.addEventListener("scroll", function () {
+          var st = window.scrollY || document.documentElement.scrollTop;
+
+          if (st > lastScrollTop) {
+            // Scroll down, show the footer
+            footer.classList.add("visible");
+          } else {
+            // Scroll up, hide the footer
+            footer.classList.remove("visible");
+          }
+
+          lastScrollTop = st <= 0 ? 0 : st;
+        });
+      });
+    </script>
+  </body>
+</html>

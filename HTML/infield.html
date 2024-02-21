@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baseball Fitness Hub</title>
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Baseball Fitness Planer</h1>
+    </header>
+
+    <nav>
+      <a href="Homepage.html">Home</a>
+      <a href="login.html">Gymplan</a>
+      <a href="#tracking">Fitness Tracking</a>
+      <a href="about.html">About Us</a>
+    </nav>
+    <section id="about">
+      <h2>Infield</h2>
+      <p>xxx</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Baseball Fitness Planer.</p>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var lastScrollTop = 0;
+        var footer = document.querySelector("footer");
+
+        window.addEventListener("scroll", function () {
+          var st = window.scrollY || document.documentElement.scrollTop;
+
+          if (st > lastScrollTop) {
+            // Scroll down, show the footer
+            footer.classList.add("visible");
+          } else {
+            // Scroll up, hide the footer
+            footer.classList.remove("visible");
+          }
+
+          lastScrollTop = st <= 0 ? 0 : st;
+        });
+      });
+    </script>
+  </body>
+</html>

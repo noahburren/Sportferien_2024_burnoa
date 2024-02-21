@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="position.css" />
     <title>Player Position</title>
   </head>
+
   <body>
+    <header><a href="Homepage.html">Back</a></header>
     <h1>Welche Position spielst du?</h1>
 
     <div id="gallery">
@@ -77,6 +79,9 @@
         </a>
       </div>
     </div>
+    <footer>
+      <p>&copy; 2024 Baseball Fitness Planer.</p>
+    </footer>
 
     <script>
       function startGif(position) {
@@ -92,6 +97,24 @@
           position +
           ".jpg";
       }
+      document.addEventListener("DOMContentLoaded", function () {
+        var lastScrollTop = 0;
+        var footer = document.querySelector("footer");
+
+        window.addEventListener("scroll", function () {
+          var st = window.scrollY || document.documentElement.scrollTop;
+
+          if (st > lastScrollTop) {
+            // Scroll down, show the footer
+            footer.classList.add("visible");
+          } else {
+            // Scroll up, hide the footer
+            footer.classList.remove("visible");
+          }
+
+          lastScrollTop = st <= 0 ? 0 : st;
+        });
+      });
     </script>
   </body>
 </html>

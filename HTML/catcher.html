@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baseball Fitness Hub</title>
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Baseball Fitness Planer</h1>
+    </header>
+
+    <nav>
+      <a href="Homepage.html">Home</a>
+      <a href="login.html">Gymplan</a>
+      <a href="#tracking">Fitness Tracking</a>
+      <a href="about.html">About Us</a>
+    </nav>
+
+    <section id="about">
+      <h2>Catcher</h2>
+      <label for="trainingDays">Training Days per Week:</label>
+      <input type="number" id="trainingDays" min="1" max="7" value="5" />
+      <button id="generatePlanButton">Generate Plan</button>
+      <div id="week-container"></div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Baseball Fitness Planer.</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var lastScrollTop = 0;
+        var footer = document.querySelector("footer");
+        var weekContainer = document.getElementById("week-container");
+
+        var workoutData = {
+          Catcher: {
+            PullDay: {
+              Exercises: [
+                { "Klimmzüge (Wide Grip)": "4 Sätze x 8-10 Wiederholungen" },
+                { Langhantelrudern: "3 Sätze x 10-12 Wiederholungen" },
+                {
+                  "Einarmiges Kurzhantelrudern":
+                    "3 Sätze x 12-15 Wiederholungen pro Seite",
+                },
+                {
+                  "Latziehen mit breitem Griff":
+                    "4 Sätze x 10-12 Wiederholungen",
+                },
+                { Hammercurls: "3 Sätze x 12-15 Wiederholungen" },
+              ],
+            },
+            PushDay: {
+              Exercises: [
+                { Bankdrücken: "4 Sätze x 8-10 Wiederholungen" },
+                { Schulterdrücken: "3 Sätze x 10-12 Wiederholungen" },
+                { "Liegestütze mit Klappe": "4 Sätze x 12-15 Wiederholungen" },
+                { "Trizeps-Dips": "3 Sätze x 12-15 Wiederholungen" },
+                {
+                  "Seitheben mit Kurzhanteln": "3 Sätze x 12-15 Wiederholungen",
+                },
+              ],
+            },
+            LegDay: {
+              Exercises: [
+                { Kniebeugen: "4 Sätze x 8-10 Wiederholungen" },
+                { Ausfallschritte: "3 Sätze x 10-12 Wiederholungen pro Bein" },
+                { Wadenheben: "4 Sätze x 12-15 Wiederholungen" },
+                { Boxsprünge: "3 Sätze x 10-12 Wiederholungen" },
+                { "Sitzende Beinpressen": "3 Sätze x 12-15 Wiederholungen" },
+              ],
+            },
+          },
+        };
+
+        var daysOfWeek = [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ];
+
+        function generateWorkoutHTML(day, workoutData) {
+          var html = "<h3>" + day + "</h3>";
+
+          if (
+            workoutData &&
+            workoutData.Exercises &&
+            workoutData.Exercises.length > 0
+          ) {
+            html += "<ul>";
+            workoutData.Exercises.forEach(function (exercise) {
+              for (var exerciseName in exercise) {
+                var exerciseDetails = exercise[exerciseName];
+                html +=
+                  "<li>" + exerciseName + ": " + exerciseDetails + "</li>";
+              }
+            });
+            html += "</ul>";
+          } else {
+            html += "<p>Rest Day</p>";
+          }
+
+          return html;
+        }
+
+        function generateWeekWorkoutPlan(selectedWorkouts) {
+          var html = "";
+
+          for (var i = 0; i < daysOfWeek.length; i++) {
+            var day = daysOfWeek[i];
+            var workoutData = selectedWorkouts[day];
+
+            html += generateWorkoutHTML(day, workoutData);
+          }
+
+          weekContainer.innerHTML = html;
+        }
+
+        function generateWorkoutPlan() {
+          var trainingDays = document.getElementById("trainingDays").value;
+          var selectedWorkouts = {};
+
+          for (var day in workoutData.Catcher) {
+            selectedWorkouts[day] = { Exercises: [] };
+          }
+
+          if (trainingDays > 0) {
+            var workoutDays = Object.keys(workoutData.Catcher);
+            var workoutsPerDay = Math.floor(trainingDays / workoutDays.length);
+            var remainingWorkouts = trainingDays % workoutDays.length;
+
+            for (var i = 0; i < workoutDays.length; i++) {
+              var day = workoutDays[i];
+              var exercises = workoutData.Catcher[day].Exercises;
+
+              // Füge Übungen nur hinzu, wenn es noch genügend verbleibende Workouts gibt
+              for (var j = 0; j < workoutsPerDay; j++) {
+                selectedWorkouts[day].Exercises =
+                  selectedWorkouts[day].Exercises.concat(exercises);
+              }
+
+              // Füge zusätzliche Übungen hinzu, wenn es noch verbleibende Workouts gibt
+              if (remainingWorkouts > 0) {
+                selectedWorkouts[day].Exercises = selectedWorkouts[
+                  day
+                ].Exercises.concat(exercises.slice(0, remainingWorkouts));
+                remainingWorkouts = 0;
+              }
+            }
+          }
+
+          generateWeekWorkoutPlan(selectedWorkouts);
+        }
+        document
+          .getElementById("generatePlanButton")
+          .addEventListener("click", generateWorkoutPlan);
+
+        window.addEventListener("scroll", function () {
+          var st = window.scrollY || document.documentElement.scrollTop;
+
+          if (
+            st > lastScrollTop &&
+            st + window.innerHeight < document.documentElement.scrollHeight
+          ) {
+            footer.classList.add("visible");
+          } else {
+            footer.classList.remove("visible");
+          }
+
+          lastScrollTop = st <= 0 ? 0 : st;
+        });
+      });
+    </script>
+  </body>
+</html>

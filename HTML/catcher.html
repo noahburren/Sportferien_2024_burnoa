@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Baseball Fitness Hub</title>
     <link rel="stylesheet" href="home.css" />
+    <link
+      rel="icon"
+      href="C:\Users\noahb\Sportferien_2024_burnoa\IMG\Bild1.ico"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <header>
@@ -76,31 +81,15 @@
           },
         };
 
-        var daysOfWeek = [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday",
-        ];
-
         function generateWorkoutHTML(day, workoutData) {
           var html = "<h3>" + day + "</h3>";
 
-          if (
-            workoutData &&
-            workoutData.Exercises &&
-            workoutData.Exercises.length > 0
-          ) {
+          if (workoutData && workoutData.Exercises) {
             html += "<ul>";
             workoutData.Exercises.forEach(function (exercise) {
-              for (var exerciseName in exercise) {
-                var exerciseDetails = exercise[exerciseName];
-                html +=
-                  "<li>" + exerciseName + ": " + exerciseDetails + "</li>";
-              }
+              var exerciseName = Object.keys(exercise)[0];
+              var exerciseDetails = exercise[exerciseName];
+              html += "<li>" + exerciseName + ": " + exerciseDetails + "</li>";
             });
             html += "</ul>";
           } else {
@@ -111,6 +100,15 @@
         }
 
         function generateWeekWorkoutPlan(selectedWorkouts) {
+          var daysOfWeek = [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ];
           var html = "";
 
           for (var i = 0; i < daysOfWeek.length; i++) {
@@ -127,37 +125,25 @@
           var trainingDays = document.getElementById("trainingDays").value;
           var selectedWorkouts = {};
 
-          for (var day in workoutData.Catcher) {
-            selectedWorkouts[day] = { Exercises: [] };
-          }
-
-          if (trainingDays > 0) {
-            var workoutDays = Object.keys(workoutData.Catcher);
-            var workoutsPerDay = Math.floor(trainingDays / workoutDays.length);
-            var remainingWorkouts = trainingDays % workoutDays.length;
-
-            for (var i = 0; i < workoutDays.length; i++) {
-              var day = workoutDays[i];
-              var exercises = workoutData.Catcher[day].Exercises;
-
-              // Füge Übungen nur hinzu, wenn es noch genügend verbleibende Workouts gibt
-              for (var j = 0; j < workoutsPerDay; j++) {
-                selectedWorkouts[day].Exercises =
-                  selectedWorkouts[day].Exercises.concat(exercises);
-              }
-
-              // Füge zusätzliche Übungen hinzu, wenn es noch verbleibende Workouts gibt
-              if (remainingWorkouts > 0) {
-                selectedWorkouts[day].Exercises = selectedWorkouts[
-                  day
-                ].Exercises.concat(exercises.slice(0, remainingWorkouts));
-                remainingWorkouts = 0;
-              }
+          for (var i = 0; i < trainingDays; i++) {
+            if (i % 3 === 0) {
+              selectedWorkouts["Monday"] = workoutData.Catcher["PushDay"];
+              selectedWorkouts["Tuesday"] = workoutData.Catcher["PullDay"];
+              selectedWorkouts["Wednesday"] = null; // Rest Day
+            } else if (i % 3 === 1) {
+              selectedWorkouts["Wednesday"] = workoutData.Catcher["LegDay"];
+              selectedWorkouts["Thursday"] = workoutData.Catcher["PushDay"];
+              selectedWorkouts["Friday"] = null; // Rest Day
+            } else {
+              selectedWorkouts["Saturday"] = workoutData.Catcher["PullDay"];
+              selectedWorkouts["Sunday"] = workoutData.Catcher["LegDay"];
             }
           }
 
           generateWeekWorkoutPlan(selectedWorkouts);
         }
+
+        // Hier verwenden wir addEventListener für den Button-Click
         document
           .getElementById("generatePlanButton")
           .addEventListener("click", generateWorkoutPlan);
@@ -165,10 +151,7 @@
         window.addEventListener("scroll", function () {
           var st = window.scrollY || document.documentElement.scrollTop;
 
-          if (
-            st > lastScrollTop &&
-            st + window.innerHeight < document.documentElement.scrollHeight
-          ) {
+          if (st > lastScrollTop) {
             footer.classList.add("visible");
           } else {
             footer.classList.remove("visible");

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" href="login.css" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
   <nav>
     <a href="Homepage.html">Home</a>
     <a href="login.html">Gymplan</a>
-    <a href="#tracking">Fitness Tracking</a>
+    <a href="Tracking.html">Fitness Tracking</a>
     <a href="about.html">About Us</a>
   </nav>
   <body>
@@ -141,8 +141,6 @@
       emailArray.push(email);
       passwordArray.push(password);
 
-      //write in json file
-
       alert(email + "  Thanks for registration. \nTry to login Now");
 
       document.getElementById("re").value = "";
@@ -161,8 +159,6 @@
     var password = document.getElementById("sp").value;
 
     var i = emailArray.indexOf(email);
-
-    //load passwort arry + email array
 
     if (emailArray.indexOf(email) == -1) {
       if (email == "") {
@@ -213,10 +209,8 @@
       var st = window.scrollY || document.documentElement.scrollTop;
 
       if (st > lastScrollTop) {
-        // Scroll down, show the footer
         footer.classList.add("visible");
       } else {
-        // Scroll up, hide the footer
         footer.classList.remove("visible");
       }
 

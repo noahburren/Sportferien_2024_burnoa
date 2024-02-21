@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tracking</title>
+    <link rel="stylesheet" href="about.css" />
+    <link
+      rel="icon"
+      href="C:\Users\noahb\Sportferien_2024_burnoa\IMG\Bild1.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Baseball Fitness Planer</h1>
+    </header>
+
+    <nav>
+      <a href="Homepage.html">Home</a>
+      <a href="login.html">Gymplan</a>
+      <a href="#tracking">Fitness Tracking</a>
+      <a href="about.html">About Us</a>
+    </nav>
+    <section id="about">
+      <h2>Track Your Progress</h2>
+      <p>Coming Soon!!</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Baseball Fitness Planer.</p>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var lastScrollTop = 0;
+        var footer = document.querySelector("footer");
+
+        window.addEventListener("scroll", function () {
+          var st = window.scrollY || document.documentElement.scrollTop;
+
+          if (st > lastScrollTop) {
+            footer.classList.add("visible");
+          } else {
+            footer.classList.remove("visible");
+          }
+
+          lastScrollTop = st <= 0 ? 0 : st;
+        });
+      });
+    </script>
+  </body>
+</html>
